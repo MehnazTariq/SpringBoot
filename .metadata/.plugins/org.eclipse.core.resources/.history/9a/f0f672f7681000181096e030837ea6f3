@@ -1,0 +1,22 @@
+package defaultMethods;
+
+    
+public class DefaultMethods1 implements Sayable{    
+    public void sayMore(String msg){     // implementing abstract method    
+        System.out.println(msg);    
+    }    
+    
+    static void sayLouder(String msg){     // implementing abstract method    
+        System.out.println("overloaded");    
+    }    
+    
+    
+    
+    public static void main(String[] args) {    
+        DefaultMethods dm = new DefaultMethods();    
+        dm.say();                       // calling default method    
+        dm.sayMore("Work is worship");      // calling abstract method    
+        Sayable.sayLouder("Helloooo...");   // calling static method    
+    }    
+}    
+ 

@@ -1,0 +1,9 @@
+//There are following types of method references in java:
+//
+//1- Reference to a static method.
+//2- Reference to an instance method.
+//3- Reference to a constructor.
+//
+
+
+package methodReference;

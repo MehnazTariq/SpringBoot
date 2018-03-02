@@ -1,0 +1,38 @@
+package com.tutorialspoint;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+@SpringBootApplication
+public class SpringBootAppContext {
+
+	public static void main(String[] args) {
+
+		AbstractApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+		HelloWorld objA = (HelloWorld) context.getBean("helloWorld");
+		// obj.getMessage();
+
+		objA.setMessage1("I'm object A");
+		objA.getMessage1();
+
+		// HelloWorld objB = (HelloWorld) context.getBean("helloWorld");
+		// objB.getMessage();
+
+		HelloIndia objB = (HelloIndia) context.getBean("helloIndia");
+		objB.getMessage1();
+		objB.getMessage2();
+		objB.getMessage3();
+
+		// Dependency injustion using Constructor
+		TextEditor te = (TextEditor) context.getBean("textEditor");
+		te.spellCheck();
+
+		// It is used to call destroy method of bean lifecycle
+		context.registerShutdownHook();
+
+	}
+
+}

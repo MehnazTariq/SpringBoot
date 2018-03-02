@@ -1,0 +1,20 @@
+1518751931866	Copy package
+1518751951744	Rename type 'Topic'
+1518751969479	Rename type 'TopicController'
+1518751987288	Rename type 'TopicRepository'
+1518752006060	Rename type 'TopicService'
+1518752117370	Rename field 'topicRepository'
+1518789541575	Copy file
+1518789553468	Copy file
+1518789566428	Copy file
+1518790426490	Rename type 'ApplicationConfig'
+1518791037412	Rename package 'io.springbootquickstart.entity'
+1518791860377	Delete element
+1518791866929	Delete element
+1518792142941	Rename type 'UsersRole'
+1518792301520	Move compilation unit
+1518792316826	Move compilation unit
+1518792342093	Move compilation unit
+1518792355495	Move compilation unit
+1518792571781	Rename type 'Users'
+1518792589462	Rename type 'UsersRepository'

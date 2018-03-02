@@ -1,0 +1,16 @@
+package io.springbootquickstart.course;
+
+import java.util.List;
+
+import org.springframework.data.repository.CrudRepository;
+
+import io.springbootquickstart.domain.Course;
+
+public interface CourseRepository extends CrudRepository<Course, String> {
+
+	
+	//findBy+Object+attribute
+	public List<Course> findByTopicId(String topicId);
+	
+	
+}

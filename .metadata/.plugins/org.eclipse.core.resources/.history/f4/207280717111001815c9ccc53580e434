@@ -1,0 +1,5 @@
+package io.springbootquickstart.topic;
+
+public class Topic {
+
+}

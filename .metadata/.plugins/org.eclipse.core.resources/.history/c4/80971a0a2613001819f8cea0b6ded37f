@@ -1,0 +1,5 @@
+package io.springbootquickstart.domain;
+
+public class Users {
+
+}

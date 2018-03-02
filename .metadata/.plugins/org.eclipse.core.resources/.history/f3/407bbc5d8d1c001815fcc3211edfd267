@@ -1,0 +1,33 @@
+package com.tutorialspoint;
+
+import org.springframework.stereotype.Component;
+
+
+
+public class HelloWorld {
+	private String message;
+
+	public  HelloWorld ()
+	{
+		
+		System.out.println("Hello World constructor is called");
+	}
+	
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public void getMessage() {
+		System.out.println("Your Message : " + message);
+	}
+
+	public void init(){
+	      System.out.println("Bean init method called.");
+	   }
+	   public void destroy() {
+	      System.out.println("Bean  destroy method called.");
+	   }
+
+
+
+}

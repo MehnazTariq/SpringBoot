@@ -1,0 +1,7 @@
+package lambdaExpression;
+
+public abstract class Parent {
+
+	abstract void draw();
+	
+}

@@ -1,0 +1,12 @@
+package io.springbootquickstart.topic;
+
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.transaction.annotation.Transactional;
+
+import io.springbootquickstart.domain.Topic;
+
+@Transactional
+
+public interface TopicRepository extends CrudRepository<Topic, String> {
+
+}

@@ -1,0 +1,16 @@
+public class CollectorsExample2 {  
+    publicstaticvoid main(String[] args) {  
+        List<Product>productsList = new ArrayList<Product>();  
+        //Adding Products  
+        productsList.add(newProduct(1,"HP Laptop",25000f));  
+        productsList.add(newProduct(2,"Dell Laptop",30000f));  
+        productsList.add(newProduct(3,"Lenevo Laptop",28000f));  
+        productsList.add(newProduct(4,"Sony Laptop",28000f));  
+        productsList.add(newProduct(5,"Apple Laptop",90000f));  
+        Set<Float>productPriceList =   
+                productsList.stream()  
+                            .map(x->x.price)         // fetching price  
+                            .collect(Collectors.toSet());   // collecting as list  
+        System.out.println(productPriceList);  
+    }  
+}  

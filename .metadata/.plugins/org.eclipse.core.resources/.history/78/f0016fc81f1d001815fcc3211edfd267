@@ -1,0 +1,27 @@
+package com.tutorialspoint.student;
+
+public class TextEditor {
+	private SpellChecker spellChecker;
+
+	
+	public TextEditor(SpellChecker spellChecker) {
+		System.out.println("Inside TextEditor constructor.");
+	
+	}
+
+	public void spellCheck() {
+		spellChecker.checkSpelling();
+	}
+
+	// Setter and getter based dependency injection
+	public SpellChecker getSpellChecker() {
+		return spellChecker;
+	}
+
+	public void setSpellChecker(SpellChecker spellChecker) {
+		System.out.println("Inside setSpellChecker.");
+		this.spellChecker = spellChecker;
+
+	}
+
+}

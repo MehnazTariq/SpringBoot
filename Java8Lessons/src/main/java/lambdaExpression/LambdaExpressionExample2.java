@@ -1,0 +1,33 @@
+package lambdaExpression;
+
+@FunctionalInterface // It is optional
+interface Drawable {
+	public void draw();
+
+	default void print() {
+		System.out.print("default method");
+	}
+}
+
+public class LambdaExpressionExample2 extends Parent implements Drawable {
+	
+	@Override
+	public void draw() {
+		// TODO Auto-generated method stub
+
+	}
+
+		
+	public static void main(String[] args) {
+		int width = 10;
+
+		// with lambda
+		Drawable d2 = () -> {
+			System.out.println("Drawing " + width);
+		};
+		d2.draw();
+		d2.print();
+	}
+
+	
+}
