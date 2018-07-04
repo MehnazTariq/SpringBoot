@@ -1,0 +1,48 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<!-- Static content -->
+<!-- <link rel="stylesheet" href="/resources/css/style.css"> -->
+<!-- <script type="text/javascript" src="/resources/js/app.js"></script> -->
+
+<title>Google Map</title>
+</head>
+<style>
+#map {
+	height: 400px;
+	width: 100%;
+}
+</style>
+</head>
+<body>
+	<h3>My Google Maps Demo</h3>
+	<div id="map"></div>
+	<script>
+      function initMap() {
+    	  var addrlhr = {lat: 31.5204, lng: 74.3587};
+    	  
+    	  //Map Options
+    	  var options={
+    			zoom:8,
+    			center:addrlhr	}  
+    	  
+        //New Map
+        var map = new google.maps.Map(document.getElementById('map'), options);
+        
+    	  
+    	 //Add marker 
+    	 var marker = new google.maps.Marker({
+          position: addrlhr,
+          map: map
+        });
+      }
+    </script>
+	<script async defer
+		src="https://maps.googleapis.com/maps/api/js?AddrLoc=AIzaSyDJFlCml5x8Ly7mMSH4w8xC9lr4xfOTF54&callback=initMap">
+    </script>
+</body>
+</html>

@@ -7,7 +7,7 @@ interface Sayable{
     // Abstract method    
     void sayMore(String msg);    
     // static method    
-    static void sayLouder(String msg){    
+    public static void sayLouder(String msg){    
         System.out.println(msg);    
     }    
 }

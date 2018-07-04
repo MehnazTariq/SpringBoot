@@ -1,2 +1,2 @@
 package cert;
-class Beverage { }
+public class Beverage { }

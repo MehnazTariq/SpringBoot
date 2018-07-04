@@ -1,0 +1,36 @@
+<!-- <jee:jndi-lookup id="userTransaction" jndi-name="java:comp/UserTransaction" resource-ref="false" environment-ref="remoteEnv" /> -->
+<!-- <jee:jndi-lookup id="jtaTransactionManager" jndi-name="java:comp/TransactionManager" resource-ref="false" environment-ref="remoteEnv" /> -->
+
+<bean id="transactionManager" class="org.springframework.transaction.jta.JtaTransactionManager">
+    <constructor-arg ref="userTransaction"/>
+    <constructor-arg ref="jtaTransactionManager"/>
+</bean>
+
+<util:properties id="remoteEnv">
+    <prop key="java.naming.provider.url">jnp://jndi.myURL.me:1099</prop>
+    <prop key="java.naming.factory.url.pkgs">org.jboss.naming:org.jnp.interfaces</prop>
+    <prop key="java.naming.factory.initial">org.jnp.interfaces.NamingContextFactory</prop>
+    <prop key="jnp.disableDiscovery">true</prop>
+</util:properties>
+
+<bean id="oracleXaDataSource" class="oracle.jdbc.xa.client.OracleXADataSource">
+    <property name="user" value="${username}" />
+    <property name="password" value="${password}" />
+    <property name="url" value="${url}" />
+</bean>
+
+<bean id="dataSourceKS" class="org.apache.commons.dbcp.managed.BasicManagedDatasource">
+    <property name="transactionManager" ref="jtaTransactionManager" />
+    <property name="xaDataSourceInstance" ref="oracleXaDataSource" />
+    <property name="initialPoolSize" value="15" />
+    <property name="minPoolSize" value="10" />
+    <property name="maxPoolSize" value="20" />
+    <property name="acquireIncrement" value="3" />
+    <property name="maxStatements" value="6000" />
+    <property name="maxStatementsPerConnection" value="300" />
+</bean>
+
+<bean name="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+    <property name="jtaDataSource" ref="dataSourceKS"/>
+    
+</bean>
